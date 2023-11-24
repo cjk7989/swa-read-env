@@ -1,0 +1,22 @@
+<!-- index.html -->
+<html>
+<head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Azure Static Web App Basic Example Reading App Settings</h1>
+    <p id="message"></p>
+    <script>
+        // 调用后端API，获取app setting
+        axios.get('/api/message')
+        .then(function (response) {
+            // 输出app setting
+            document.getElementById("message").innerHTML = "The app setting is: " + response.data;
+        })
+        .catch(function (error) {
+            // 处理错误
+            console.log(error);
+        });
+    </script>
+</body>
+</html>
